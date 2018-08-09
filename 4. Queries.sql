@@ -95,7 +95,7 @@ LEFT JOIN loan ln
 ON cr.id=ln.customer_id
 WHERE rental_date>='2018-01-01' 
 AND return_date <= '2018-12-31' 
-GROUP BY last_name
+GROUP BY customer_id
 ORDER BY final_price DESC
 LIMIT 3; 
 
