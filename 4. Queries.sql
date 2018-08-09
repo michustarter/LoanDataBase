@@ -21,12 +21,12 @@ SELECT first_name,last_name,position FROM employee e JOIN employee_position ep O
 -- g-1-2-3-4
 
 -- g-1
-SELECT customer_id,first_name,last_name, COUNT(customer_id) loans_number FROM customer c LEFT JOIN loan l
+SELECT customer_id,first_name,last_name, COUNT(*) loans_number FROM customer c LEFT JOIN loan l
 ON l.customer_id=c.id GROUP BY customer_id ORDER BY loans_number DESC LIMIT 1;
 
 -- g-2
-SELECT MONTH(rental_date) MONTH, COUNT(*) loans_number FROM loan GROUP BY MONTH(rental_date)
-ORDER BY MONTH(rental_date);
+SELECT MONTH(rental_date) month, COUNT(*) loans_number FROM loan GROUP BY month
+ORDER BY month;
 
 -- g-3
 SELECT * FROM amount_of_rentals;
